@@ -1,0 +1,29 @@
+{
+    "Svelte Typescript Script Tag": {
+        "prefix": "svts",
+        "body": [
+            "<script lang=\"ts\">",
+            "$0",
+            "</script>"
+        ],
+        "description": "Svelte Typescript script tag"
+    },
+    "Svelte Event Dispatcher": {
+        "prefix": "svdisp",
+        "body": [
+            "import { createEventDispatcher } from 'svelte';",
+            "const dispatch = createEventDispatcher()",
+            "$0"
+        ],
+        "description": "Svelte event dispatcher"
+    },
+    "Svelte Event Dispatcher with types": {
+        "prefix": "svdispt",
+        "body": [
+            "import { createEventDispatcher } from 'svelte';",
+            "const dispatch = createEventDispatcher<{ $1: $2}>()",
+            "$0"
+        ],
+        "description": "Svelte event dispatcher with type annotations"
+    }
+}

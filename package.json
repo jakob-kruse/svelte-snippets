@@ -1,0 +1,42 @@
+{
+  "name": "svelte-kit-snippets",
+  "displayName": "Svelte Snippets",
+  "description": "Snippets for Svelte and Svelte-Kit",
+  "version": "0.0.1",
+  "publisher": "JakobKruse",
+  "bugs": {
+    "url": "https://github.com/jakob-kruse/svelte-snippets.git/issues",
+    "email": "contact@jakob-kruse.de"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakob-kruse/svelte-snippets.git"
+  },
+  "engines": {
+    "vscode": "^1.20.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "icon": "icon.png",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "svelte",
+        "path": "./snippets/svelte.json"
+      },
+      {
+        "language": "svelte",
+        "path": "./snippets/svelte-kit.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/svelte.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/svelte-kit.json"
+      }
+    ]
+  }
+}
