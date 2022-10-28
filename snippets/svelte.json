@@ -1,29 +1,55 @@
 {
-    "Svelte Typescript Script Tag": {
-        "prefix": "svts",
-        "body": [
-            "<script lang=\"ts\">",
-            "$0",
-            "</script>"
-        ],
-        "description": "Svelte Typescript script tag"
-    },
-    "Svelte Event Dispatcher": {
-        "prefix": "svdisp",
-        "body": [
-            "import { createEventDispatcher } from 'svelte';",
-            "const dispatch = createEventDispatcher()",
-            "$0"
-        ],
-        "description": "Svelte event dispatcher"
-    },
-    "Svelte Event Dispatcher with types": {
-        "prefix": "svdispt",
-        "body": [
-            "import { createEventDispatcher } from 'svelte';",
-            "const dispatch = createEventDispatcher<{ $1: $2}>()",
-            "$0"
-        ],
-        "description": "Svelte event dispatcher with type annotations"
-    }
+  "Svelte Typescript Script Tag": {
+    "prefix": "svts",
+    "body": ["<script lang=\"ts\">", "$0", "</script>"],
+    "description": "Svelte Typescript script tag"
+  },
+  "Svelte Event Dispatcher": {
+    "prefix": "svdisp",
+    "body": ["const dispatch = createEventDispatcher()", "$0"],
+    "description": "Svelte event dispatcher"
+  },
+  "Svelte Event Dispatcher with types": {
+    "prefix": "svdispt",
+    "body": ["const dispatch = createEventDispatcher<{ $1: $2}>()", "$0"],
+    "description": "Svelte event dispatcher with type annotations"
+  },
+  "Svelte Head Tag": {
+    "prefix": "svhead",
+    "body": [
+      "<svelte:head>",
+      "   <title>$1</title>",
+      "   <meta name=\"description\" content=\"$2\">",
+      "</svelte:head>",
+      "$0"
+    ],
+    "description": "Svelte head tag"
+  },
+  "Svelte For Each": {
+    "prefix": "svfe",
+    "body": ["{#each $1 as $2 ($3)}", "   $0", "{/each}", "$0"],
+    "description": "Svelte for each"
+  },
+  "Svelte For Each else": {
+    "prefix": "svfee",
+    "body": [
+      "{#each $1 as $2 ($3)}",
+      "   $4",
+      "{:else}",
+      "   $5",
+      "{/each}",
+      "$0"
+    ],
+    "description": "Svelte for each"
+  },
+  "Svelte If": {
+    "prefix": "svif",
+    "body": ["{#if $1}", "   $0", "{/if}", "$0"],
+    "description": "Svelte if"
+  },
+  "Svelte If Else": {
+    "prefix": "svife",
+    "body": ["{#if $1}", "   $2", "{:else}", "   $3", "{/if}", "$0"],
+    "description": "Svelte if else"
+  }
 }

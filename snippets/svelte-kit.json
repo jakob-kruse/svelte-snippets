@@ -1,39 +1,28 @@
 {
-    "Svelte-Kit Route": {
-        "prefix": "skroute",
-        "body": [
-            "<script lang=\"ts\" context=\"module\">",
-            "   import type { Load } from '@sveltejs/kit';",
-            "",
-            "   export const load: Load = async ({ ${1:fetch} }) => {",
-            "       $2",
-            "       return {",
-            "           status: 200,",
-            "           props: {",
-            "               $3",
-            "           }",
-            "       };",
-            "   };",
-            "</script>",
-            "",
-            "<script lang=\"ts\">",
-            "   $4",
-            "</script>",
-            "",
-            "$0"
-        ],
-        "description": "Svelte-Kit Route"
-    },
-    "Svelte-Kit Endpoint": {
-        "prefix": "skendpoint",
-        "body": [
-            "export const ${1|get,post,put,patch,del|}: RequestHandler = async ({ ${2:request} }) => {",
-            "   $3",
-            "   return {",
-            "       body: $0",
-            "   };",
-            "}"
-        ],
-        "description": "Svelte-Kit Endpoint"
-    }
+  "SvelteKit Page Server Load": {
+    "prefix": "skload",
+    "body": [
+      "export const load: PageServerLoad = async ({ $1 }) => {",
+      "   $2",
+      "   return {",
+      "     $3",
+      "   };",
+      "};"
+    ],
+    "description": "SvelteKit Page Server Load"
+  },
+  "SvelteKit Page Actions": {
+    "prefix": "skactions",
+    "body": [
+      "export const actions: Actions = {",
+      "   async ${1:default}({ $2 }) {",
+      "     $3",
+      "     return {",
+      "       $4",
+      "     };",
+      "   }",
+      "};"
+    ],
+    "description": "SvelteKit Page Actions"
+  }
 }
