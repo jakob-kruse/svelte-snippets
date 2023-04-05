@@ -1,0 +1,4 @@
+node_moodules/
+script/
+.vscode/
+*.vsix

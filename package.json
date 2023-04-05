@@ -2,7 +2,7 @@
   "name": "svelte-kit-snippets",
   "displayName": "Svelte Snippets",
   "description": "Snippets for Svelte and Svelte-Kit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "JakobKruse",
   "bugs": {
     "url": "https://github.com/jakob-kruse/svelte-snippets.git/issues",
@@ -38,5 +38,12 @@
         "path": "./snippets/svelte-kit.json"
       }
     ]
+  },
+  "scripts": {
+    "readme": "tsx scripts/generate-readme.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "tsx": "^3.12.6"
   }
 }

@@ -16,13 +16,7 @@
   },
   "Svelte Head Tag": {
     "prefix": "svhead",
-    "body": [
-      "<svelte:head>",
-      "   <title>$1</title>",
-      "   <meta name=\"description\" content=\"$2\">",
-      "</svelte:head>",
-      "$0"
-    ],
+    "body": ["<svelte:head>", "   $1", "</svelte:head>", "$0"],
     "description": "Svelte head tag"
   },
   "Svelte For Each": {
@@ -51,5 +45,22 @@
     "prefix": "svife",
     "body": ["{#if $1}", "   $2", "{:else}", "   $3", "{/if}", "$0"],
     "description": "Svelte if else"
+  },
+  "Svelte Await": {
+    "prefix": "svawait",
+    "body": [
+      "{#await $1}",
+      "   {$2}",
+      "{:then $3}",
+      "   {$4}",
+      "{/await}",
+      "$0"
+    ],
+    "description": "Svelte await"
+  },
+  "Svelte Key": {
+    "prefix": "svkey",
+    "body": ["{#key $1}", "   $2", "{/key}", "$0"],
+    "description": "Svelte key"
   }
 }

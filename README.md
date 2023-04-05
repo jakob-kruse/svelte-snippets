@@ -4,115 +4,242 @@ Snippets for Svelte and Svelte-Kit (using TypeScript)
 
 ## Snippets
 
-### Svelte
+
+### SVELTE KIT
 
 <details>
-  <summary markdown="span">svts - Svelte Script Tag with typescript</summary>
+<summary markdown="span">skl - SvelteKit Page Server Load</summary>
 
-    <script lang="ts">
-        $1
-    </script>
-
+```ts
+export const load = async ({ $1 }) => {
+   $2
+   return {
+     $3
+   };
+};
+```
 </details>
+    
 
 <details>
-  <summary markdown="span">svdisp - Svelte Event Dispatcher (No Types)</summary>
+<summary markdown="span">skpl - SvelteKit Page Server Load with explicit typing for PageLoad</summary>
 
-    const dispatch = createEventDispatcher()
-    $0
-
+```ts
+export const load: PageLoad = async ({ $1 }) => {
+   $2
+   return {
+     $3
+   };
+};
+```
 </details>
+    
 
 <details>
-  <summary markdown="span">svdispt - Svelte Event Dispatcher with types</summary>
+<summary markdown="span">skpsl - SvelteKit Page Server Load with explicit typing for PageServerLoad</summary>
 
-    const dispatch = createEventDispatcher<{ $1: $2 }>()", "$0"
-
+```ts
+export const load: PageServerLoad = async ({ $1 }) => {
+   $2
+   return {
+     $3
+   };
+};
+```
 </details>
+    
 
 <details>
-  <summary markdown="span">svhead - Svelte Head Tag with title and description</summary>
+<summary markdown="span">skll - SvelteKit Page Server Load with explicit typing for LayoutServerLoad and context</summary>
 
-    <svelte:head>
-        <title>$1</title>
-        <meta name="description" content="$2">
-    </svelte:head>
-    $0
-
+```ts
+export const load: LayoutServerLoad<{ $1 }> = async ({ $2 }) => {
+   $3
+   return {
+     $4
+   };
+};
+```
 </details>
+    
 
 <details>
-  <summary markdown="span">svfe - Svelte For Each</summary>
+<summary markdown="span">sklsl - SvelteKit Page Server Load with explicit typing for LayoutServerLoad and context</summary>
 
-    {#each $1 as $2 ($3)}
-        $0
-    {/each}
-
+```ts
+export const load: LayoutServerLoad<{ $1 }> = async ({ $2 }) => {
+   $3
+   return {
+     $4
+   };
+};
+```
 </details>
+    
 
 <details>
-  <summary markdown="span">svfee - Svelte For Each with else</summary>
+<summary markdown="span">ska - SvelteKit Page Actions</summary>
 
-    {#each $1 as $2 ($3)}
-        $4
-    {:else}
-        $5
-    {/each}
-    $0
-
+```ts
+export const actions = {
+   async ${1:default}({ $2 }) {
+     $3
+     return {
+       $4
+     };
+   }
+};
+```
 </details>
+    
 
 <details>
-  <summary markdown="span">svif - Svelte If</summary>
+<summary markdown="span">skat - SvelteKit Page Actions with explicit typing</summary>
 
-    {#if $1}
-        $2
-    {/each}
-    $0
-
+```ts
+export const actions: Actions = {
+   async ${1:default}({ $2 }) {
+     $3
+     return {
+       $4
+     };
+   }
+};
+```
 </details>
+    
+    
+
+### SVELTE
 
 <details>
-  <summary markdown="span">svife - Svelte If Else</summary>
+<summary markdown="span">svts - Svelte Typescript script tag</summary>
 
-    {#if $1}
-        $2
-    {:else}
-        $3
-    {/each}
-    $0
-
+```ts
+<script lang="ts">
+$0
+</script>
+```
 </details>
-
-### SvelteKit
+    
 
 <details>
-  <summary markdown="span">skload - Svelte Kit Server Page Load</summary>
+<summary markdown="span">svdisp - Svelte event dispatcher</summary>
 
-    export const load: PageServerLoad = async ({ $1 }) => {
-        return {
-            $2
-        };
-    };
-
+```ts
+const dispatch = createEventDispatcher()
+$0
+```
 </details>
+    
 
 <details>
-  <summary markdown="span">skactions - Svelte Kit Form Actions</summary>
+<summary markdown="span">svdispt - Svelte event dispatcher with type annotations</summary>
 
-    export const actions: Actions = {
-        async default({ $1 }) {
-            $2
-            return {
-                $3
-            };
-        }
-    };
-
+```ts
+const dispatch = createEventDispatcher<{ $1: $2}>()
+$0
+```
 </details>
+    
+
+<details>
+<summary markdown="span">svhead - Svelte head tag</summary>
+
+```ts
+<svelte:head>
+   $1
+</svelte:head>
+$0
+```
+</details>
+    
+
+<details>
+<summary markdown="span">svfe - Svelte for each</summary>
+
+```ts
+{#each $1 as $2 ($3)}
+   $0
+{/each}
+$0
+```
+</details>
+    
+
+<details>
+<summary markdown="span">svfee - Svelte for each</summary>
+
+```ts
+{#each $1 as $2 ($3)}
+   $4
+{:else}
+   $5
+{/each}
+$0
+```
+</details>
+    
+
+<details>
+<summary markdown="span">svif - Svelte if</summary>
+
+```ts
+{#if $1}
+   $0
+{/if}
+$0
+```
+</details>
+    
+
+<details>
+<summary markdown="span">svife - Svelte if else</summary>
+
+```ts
+{#if $1}
+   $2
+{:else}
+   $3
+{/if}
+$0
+```
+</details>
+    
+
+<details>
+<summary markdown="span">svawait - Svelte await</summary>
+
+```ts
+{#await $1}
+   {$2}
+{:then $3}
+   {$4}
+{/await}
+$0
+```
+</details>
+    
+
+<details>
+<summary markdown="span">svkey - Svelte key</summary>
+
+```ts
+{#key $1}
+   $2
+{/key}
+$0
+```
+</details>
+    
+    
 
 ## Note
 
 The snippets include "$1", "$2"... which are placeholders for the cursor position. You can use the tab key to jump between them.
 
 These snippets do not include required imports. You will need to add them yourself.
+
+## License
+
+MIT

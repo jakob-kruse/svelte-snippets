@@ -1,8 +1,8 @@
 {
-  "SvelteKit Page Server Load": {
-    "prefix": "skload",
+  "SvelteKit Load": {
+    "prefix": "skl",
     "body": [
-      "export const load: PageServerLoad = async ({ $1 }) => {",
+      "export const load = async ({ $1 }) => {",
       "   $2",
       "   return {",
       "     $3",
@@ -11,8 +11,70 @@
     ],
     "description": "SvelteKit Page Server Load"
   },
+  "SvelteKit Page Load": {
+    "prefix": "skpl",
+    "body": [
+      "export const load: PageLoad = async ({ $1 }) => {",
+      "   $2",
+      "   return {",
+      "     $3",
+      "   };",
+      "};"
+    ],
+    "description": "SvelteKit Page Server Load with explicit typing for PageLoad"
+  },
+  "SvelteKit Page Server Load": {
+    "prefix": "skpsl",
+    "body": [
+      "export const load: PageServerLoad = async ({ $1 }) => {",
+      "   $2",
+      "   return {",
+      "     $3",
+      "   };",
+      "};"
+    ],
+    "description": "SvelteKit Page Server Load with explicit typing for PageServerLoad"
+  },
+  "SvelteKit Layout  Load": {
+    "prefix": "skll",
+    "body": [
+      "export const load: LayoutServerLoad<{ $1 }> = async ({ $2 }) => {",
+      "   $3",
+      "   return {",
+      "     $4",
+      "   };",
+      "};"
+    ],
+    "description": "SvelteKit Page Server Load with explicit typing for LayoutServerLoad and context"
+  },
+  "SvelteKit Layout Server Load": {
+    "prefix": "sklsl",
+    "body": [
+      "export const load: LayoutServerLoad<{ $1 }> = async ({ $2 }) => {",
+      "   $3",
+      "   return {",
+      "     $4",
+      "   };",
+      "};"
+    ],
+    "description": "SvelteKit Page Server Load with explicit typing for LayoutServerLoad and context"
+  },
   "SvelteKit Page Actions": {
-    "prefix": "skactions",
+    "prefix": "ska",
+    "body": [
+      "export const actions = {",
+      "   async ${1:default}({ $2 }) {",
+      "     $3",
+      "     return {",
+      "       $4",
+      "     };",
+      "   }",
+      "};"
+    ],
+    "description": "SvelteKit Page Actions"
+  },
+  "SvelteKit Page Actions (Typed)": {
+    "prefix": "skat",
     "body": [
       "export const actions: Actions = {",
       "   async ${1:default}({ $2 }) {",
@@ -23,6 +85,6 @@
       "   }",
       "};"
     ],
-    "description": "SvelteKit Page Actions"
+    "description": "SvelteKit Page Actions with explicit typing"
   }
 }
