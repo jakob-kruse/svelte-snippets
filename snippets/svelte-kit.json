@@ -1,90 +1,228 @@
 {
-  "SvelteKit Load": {
-    "prefix": "skl",
+  "SvelteKit: Page (TypeScript)": {
+    "prefix": "skpage",
     "body": [
-      "export const load = async ({ $1 }) => {",
-      "   $2",
-      "   return {",
-      "     $3",
-      "   };",
-      "};"
+      "<script lang=\"ts\">",
+      "   import type { PageData } from './\\$types';",
+      "",
+      "   export let page: PageData;",
+      "   $1",
+      "</script>",
+      "",
+      "$0"
     ],
-    "description": "SvelteKit Page Server Load"
+    "description": "SvelteKit Page (TypeScript)"
   },
-  "SvelteKit Page Load": {
+  "SvelteKit: Page (JavaScript)": {
+    "prefix": "skpagejs",
+    "body": [
+      "<script>",
+      "   /** @type {import('./\\$types').PageData} */",
+      "   export let page;",
+      "   $1",
+      "</script>",
+      "",
+      "$0"
+    ],
+    "description": "SvelteKit Page (JavaScript)"
+  },
+  "SvelteKit: Page Load (TypeScript)": {
     "prefix": "skpl",
     "body": [
-      "export const load: PageLoad = async ({ $1 }) => {",
+      "import type { PageLoad } from './\\$types';",
+      "",
+      "export const load: PageLoad = async (${1:event}) => {",
       "   $2",
       "   return {",
-      "     $3",
+      "     $0",
       "   };",
       "};"
     ],
-    "description": "SvelteKit Page Server Load with explicit typing for PageLoad"
+    "description": "SvelteKit Page Load (TypeScript)"
   },
-  "SvelteKit Page Server Load": {
+  "SvelteKit: Page Load (JavaScript)": {
+    "prefix": "skpljs",
+    "body": [
+      "/** @type {import('./\\$types').PageLoad} */",
+      "export const load = async (${1:event}) => {",
+      "   $2",
+      "   return {",
+      "     $0",
+      "   };",
+      "};"
+    ],
+    "description": "SvelteKit Page Load (JavaScript)"
+  },
+  "SvelteKit: Page Server Load (TypeScript)": {
     "prefix": "skpsl",
     "body": [
-      "export const load: PageServerLoad = async ({ $1 }) => {",
+      "import type { PageServerLoad } from './\\$types';",
+      "",
+      "export const load: PageServerLoad = async (${1:event}) => {",
       "   $2",
       "   return {",
-      "     $3",
+      "     $0",
       "   };",
       "};"
     ],
-    "description": "SvelteKit Page Server Load with explicit typing for PageServerLoad"
+    "description": "SvelteKit Page Server Load (TypeScript)"
   },
-  "SvelteKit Layout  Load": {
+  "SvelteKit: Page Server Load (JavaScript)": {
+    "prefix": "skpsljs",
+    "body": [
+      "/** @type {import('./\\$types').PageServerLoad} */",
+      "export const load = async (${1:event}) => {",
+      "   $2",
+      "   return {",
+      "     $0",
+      "   };",
+      "};"
+    ],
+    "description": "SvelteKit Page Server Load (JavaScript)"
+  },
+  "SvelteKit: Layout Load (TypeScript)": {
     "prefix": "skll",
     "body": [
-      "export const load: LayoutServerLoad<{ $1 }> = async ({ $2 }) => {",
-      "   $3",
+      "import type { LayoutLoad } from './\\$types';",
+      "",
+      "export const load: LayoutLoad = async (${1:event}) => {",
+      "   $2",
       "   return {",
-      "     $4",
+      "     $0",
       "   };",
       "};"
     ],
-    "description": "SvelteKit Page Server Load with explicit typing for LayoutServerLoad and context"
+    "description": "SvelteKit Layout Load (TypeScript)"
   },
-  "SvelteKit Layout Server Load": {
+  "SvelteKit: Layout Load (JavaScript)": {
+    "prefix": "skll",
+    "body": [
+      "/** @type {import('./\\$types').LayoutLoad} */",
+      "export const load = async (${1:event}) => {",
+      "   $2",
+      "   return {",
+      "     $0",
+      "   };",
+      "};"
+    ],
+    "description": "SvelteKit Layout Load (JavaScript)"
+  },
+  "SvelteKit: Layout Server Load (TypeScript)": {
     "prefix": "sklsl",
     "body": [
-      "export const load: LayoutServerLoad<{ $1 }> = async ({ $2 }) => {",
-      "   $3",
+      "import type { LayoutServerLoad } from './\\$types';",
+      "",
+      "export const load: LayoutServerLoad = async (${1:event}) => {",
+      "   $2",
       "   return {",
-      "     $4",
+      "     $0",
       "   };",
       "};"
     ],
-    "description": "SvelteKit Page Server Load with explicit typing for LayoutServerLoad and context"
+    "description": "SvelteKit Layout Server Load (TypeScript)"
   },
-  "SvelteKit Page Actions": {
-    "prefix": "ska",
+  "SvelteKit: Layout Server Load (JavaScript)": {
+    "prefix": "sklsljs",
     "body": [
-      "export const actions = {",
-      "   async ${1:default}({ $2 }) {",
-      "     $3",
-      "     return {",
-      "       $4",
-      "     };",
-      "   }",
+      "/** @type {import('./\\$types').LayoutServerLoad} */",
+      "export const load = async (${1:event}) => {",
+      "   $2",
+      "   return {",
+      "     $0",
+      "   };",
       "};"
     ],
-    "description": "SvelteKit Page Actions"
+    "description": "SvelteKit Layout Server Load (JavaScript)"
   },
-  "SvelteKit Page Actions (Typed)": {
-    "prefix": "skat",
+  "SvelteKit: Page Actions (TypeScript)": {
+    "prefix": "ska",
     "body": [
+      "import { Actions } from './\\$types';",
+      "",
       "export const actions: Actions = {",
       "   async ${1:default}({ $2 }) {",
       "     $3",
-      "     return {",
-      "       $4",
-      "     };",
       "   }",
       "};"
     ],
-    "description": "SvelteKit Page Actions with explicit typing"
+    "description": "SvelteKit Page Actions (TypeScript)"
+  },
+  "SvelteKit: Page Actions (JavaScript)": {
+    "prefix": "skajs",
+    "body": [
+      "/** @type {import('./\\$types').Actions} */",
+      "export const actions = {",
+      "   async ${1:default}({ $1 }) {",
+      "     $2",
+      "   }",
+      "};"
+    ],
+    "description": "SvelteKit Page Actions (JavaScript)"
+  },
+  "SvelteKit: Hooks: Handle (TypeScript)": {
+    "prefix": "skhh",
+    "body": [
+      "import type { Handle } from './\\$types';",
+      "",
+      "export const handle: Handle = async ({ request, resolve }) => {",
+      "   $1",
+      "   return resolve(request);",
+      "};"
+    ],
+    "description": "SvelteKit Hooks: Handle (TypeScript)"
+  },
+  "SvelteKit: Hooks: Handle (JavaScript)": {
+    "prefix": "skhhjs",
+    "body": [
+      "/** @type {import('./\\$types').Handle} */",
+      "export const handle = async ({ event, resolve }) => {",
+      "   $1",
+      "   return resolve(event);",
+      "};"
+    ],
+    "description": "SvelteKit Hooks: Handle (JavaScript)"
+  },
+  "SvelteKit: Hooks: HandleFetch (TypeScript)": {
+    "prefix": "skhf",
+    "body": [
+      "import type { HandleFetch } from './\\$types';",
+      "",
+      "export const handle: HandleFetch = async ({ request, fetch }) => {",
+      "   $1",
+      "   return resolve(request);",
+      "};"
+    ],
+    "description": "SvelteKit Hooks: HandleFetch (Typescript)"
+  },
+  "SvelteKit: Hooks: HandleFetch (JavaScript)": {
+    "prefix": "skhfjs",
+    "body": [
+      "/** @type {import('./\\$types').HandleFetch} */",
+      "export const handle = async ({ request, fetch }) => {",
+      "   $1",
+      "};"
+    ],
+    "description": "SvelteKit Hooks: HandleFetch (JavaScript)"
+  },
+  "SvelteKit: Hooks: Handle Error (TypeScript)": {
+    "prefix": "skhe",
+    "body": [
+      "import type { HandleError } from './\\$types';",
+      "",
+      "export const handle: HandleError = async ({ error, event }) => {",
+      "   $2",
+      "};"
+    ],
+    "description": "SvelteKit Hooks: Handle Error (TypeScript)"
+  },
+  "SvelteKit: Hooks: Handle Error (JavaScript)": {
+    "prefix": "skhejs",
+    "body": [
+      "/** @type {import('./\\$types').HandleError} */",
+      "export const handle = async ({ error, event }) => {",
+      "   $1",
+      "};"
+    ],
+    "description": "SvelteKit Hooks: Handle Error (JavaScript)"
   }
 }

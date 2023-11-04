@@ -35,7 +35,12 @@ function snippetFileToSnippet(file: SnippetFile): Snippet[] {
 function snippetTemplate(snippet: Snippet): string {
   return `
 <details>
-<summary markdown="span">${snippet.prefix} - ${snippet.description}</summary>
+<summary markdown="span"><b>${snippet.prefix.slice(
+    0,
+    2
+  )}</b>${snippet.prefix.slice(2)} - ${snippet.description
+    .replace("SvelteKit", "")
+    .replace("Svelte", "")}</summary>
 
 \`\`\`ts
 ${snippet.body}
@@ -57,6 +62,8 @@ const readmeTemplate = (categories: SnippetCategory[]): string => {
 
 Snippets for Svelte and Svelte-Kit (using TypeScript)
 
+[VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=JakobKruse.svelte-kit-snippets)
+
 ## Snippets
 
 ${categories.map(snippetCategoryTemplate).join("\n")}
@@ -64,8 +71,6 @@ ${categories.map(snippetCategoryTemplate).join("\n")}
 ## Note
 
 The snippets include "$1", "$2"... which are placeholders for the cursor position. You can use the tab key to jump between them.
-
-These snippets do not include required imports. You will need to add them yourself.
 
 ## License
 

@@ -1,4 +1,5 @@
-node_moodules/
+node_moodules
 script/
 .vscode/
 *.vsix
+example/

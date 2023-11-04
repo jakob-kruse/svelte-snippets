@@ -2,19 +2,54 @@
 
 Snippets for Svelte and Svelte-Kit (using TypeScript)
 
+[VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=JakobKruse.svelte-kit-snippets)
+
 ## Snippets
 
 
 ### SVELTE KIT
 
 <details>
-<summary markdown="span">skl - SvelteKit Page Server Load</summary>
+<summary markdown="span"><b>sk</b>page -  Page (TypeScript)</summary>
 
 ```ts
-export const load = async ({ $1 }) => {
+<script lang="ts">
+   import type { PageData } from './\$types';
+
+   export let page: PageData;
+   $1
+</script>
+
+$0
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sk</b>pagejs -  Page (JavaScript)</summary>
+
+```ts
+<script>
+   /** @type {import('./\$types').PageData} */
+   export let page;
+   $1
+</script>
+
+$0
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sk</b>pl -  Page Load (TypeScript)</summary>
+
+```ts
+import type { PageLoad } from './\$types';
+
+export const load: PageLoad = async (${1:event}) => {
    $2
    return {
-     $3
+     $0
    };
 };
 ```
@@ -22,13 +57,14 @@ export const load = async ({ $1 }) => {
     
 
 <details>
-<summary markdown="span">skpl - SvelteKit Page Server Load with explicit typing for PageLoad</summary>
+<summary markdown="span"><b>sk</b>pljs -  Page Load (JavaScript)</summary>
 
 ```ts
-export const load: PageLoad = async ({ $1 }) => {
+/** @type {import('./\$types').PageLoad} */
+export const load = async (${1:event}) => {
    $2
    return {
-     $3
+     $0
    };
 };
 ```
@@ -36,13 +72,15 @@ export const load: PageLoad = async ({ $1 }) => {
     
 
 <details>
-<summary markdown="span">skpsl - SvelteKit Page Server Load with explicit typing for PageServerLoad</summary>
+<summary markdown="span"><b>sk</b>psl -  Page Server Load (TypeScript)</summary>
 
 ```ts
-export const load: PageServerLoad = async ({ $1 }) => {
+import type { PageServerLoad } from './\$types';
+
+export const load: PageServerLoad = async (${1:event}) => {
    $2
    return {
-     $3
+     $0
    };
 };
 ```
@@ -50,13 +88,14 @@ export const load: PageServerLoad = async ({ $1 }) => {
     
 
 <details>
-<summary markdown="span">skll - SvelteKit Page Server Load with explicit typing for LayoutServerLoad and context</summary>
+<summary markdown="span"><b>sk</b>psljs -  Page Server Load (JavaScript)</summary>
 
 ```ts
-export const load: LayoutServerLoad<{ $1 }> = async ({ $2 }) => {
-   $3
+/** @type {import('./\$types').PageServerLoad} */
+export const load = async (${1:event}) => {
+   $2
    return {
-     $4
+     $0
    };
 };
 ```
@@ -64,13 +103,15 @@ export const load: LayoutServerLoad<{ $1 }> = async ({ $2 }) => {
     
 
 <details>
-<summary markdown="span">sklsl - SvelteKit Page Server Load with explicit typing for LayoutServerLoad and context</summary>
+<summary markdown="span"><b>sk</b>ll -  Layout Load (TypeScript)</summary>
 
 ```ts
-export const load: LayoutServerLoad<{ $1 }> = async ({ $2 }) => {
-   $3
+import type { LayoutLoad } from './\$types';
+
+export const load: LayoutLoad = async (${1:event}) => {
+   $2
    return {
-     $4
+     $0
    };
 };
 ```
@@ -78,32 +119,153 @@ export const load: LayoutServerLoad<{ $1 }> = async ({ $2 }) => {
     
 
 <details>
-<summary markdown="span">ska - SvelteKit Page Actions</summary>
+<summary markdown="span"><b>sk</b>ll -  Layout Load (JavaScript)</summary>
 
 ```ts
-export const actions = {
-   async ${1:default}({ $2 }) {
-     $3
-     return {
-       $4
-     };
-   }
+/** @type {import('./\$types').LayoutLoad} */
+export const load = async (${1:event}) => {
+   $2
+   return {
+     $0
+   };
 };
 ```
 </details>
     
 
 <details>
-<summary markdown="span">skat - SvelteKit Page Actions with explicit typing</summary>
+<summary markdown="span"><b>sk</b>lsl -  Layout Server Load (TypeScript)</summary>
 
 ```ts
+import type { LayoutServerLoad } from './\$types';
+
+export const load: LayoutServerLoad = async (${1:event}) => {
+   $2
+   return {
+     $0
+   };
+};
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sk</b>lsljs -  Layout Server Load (JavaScript)</summary>
+
+```ts
+/** @type {import('./\$types').LayoutServerLoad} */
+export const load = async (${1:event}) => {
+   $2
+   return {
+     $0
+   };
+};
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sk</b>a -  Page Actions (TypeScript)</summary>
+
+```ts
+import { Actions } from './\$types';
+
 export const actions: Actions = {
    async ${1:default}({ $2 }) {
      $3
-     return {
-       $4
-     };
    }
+};
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sk</b>ajs -  Page Actions (JavaScript)</summary>
+
+```ts
+/** @type {import('./\$types').Actions} */
+export const actions = {
+   async ${1:default}({ $1 }) {
+     $2
+   }
+};
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sk</b>hh -  Hooks: Handle (TypeScript)</summary>
+
+```ts
+import type { Handle } from './\$types';
+
+export const handle: Handle = async ({ request, resolve }) => {
+   $1
+   return resolve(request);
+};
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sk</b>hhjs -  Hooks: Handle (JavaScript)</summary>
+
+```ts
+/** @type {import('./\$types').Handle} */
+export const handle = async ({ event, resolve }) => {
+   $1
+   return resolve(event);
+};
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sk</b>hf -  Hooks: HandleFetch (Typescript)</summary>
+
+```ts
+import type { HandleFetch } from './\$types';
+
+export const handle: HandleFetch = async ({ request, fetch }) => {
+   $1
+   return resolve(request);
+};
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sk</b>hfjs -  Hooks: HandleFetch (JavaScript)</summary>
+
+```ts
+/** @type {import('./\$types').HandleFetch} */
+export const handle = async ({ request, fetch }) => {
+   $1
+};
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sk</b>he -  Hooks: Handle Error (TypeScript)</summary>
+
+```ts
+import type { HandleError } from './\$types';
+
+export const handle: HandleError = async ({ error, event }) => {
+   $2
+};
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sk</b>hejs -  Hooks: Handle Error (JavaScript)</summary>
+
+```ts
+/** @type {import('./\$types').HandleError} */
+export const handle = async ({ error, event }) => {
+   $1
 };
 ```
 </details>
@@ -113,30 +275,11 @@ export const actions: Actions = {
 ### SVELTE
 
 <details>
-<summary markdown="span">svts - Svelte Typescript script tag</summary>
+<summary markdown="span"><b>sv</b>disp -  Event Dispatcher</summary>
 
 ```ts
-<script lang="ts">
-$0
-</script>
-```
-</details>
-    
+import { createEventDispatcher } from 'svelte';
 
-<details>
-<summary markdown="span">svdisp - Svelte event dispatcher</summary>
-
-```ts
-const dispatch = createEventDispatcher()
-$0
-```
-</details>
-    
-
-<details>
-<summary markdown="span">svdispt - Svelte event dispatcher with type annotations</summary>
-
-```ts
 const dispatch = createEventDispatcher<{ $1: $2}>()
 $0
 ```
@@ -144,7 +287,19 @@ $0
     
 
 <details>
-<summary markdown="span">svhead - Svelte head tag</summary>
+<summary markdown="span"><b>sv</b>dispjs -  Event Dispatcher (JavaScript)</summary>
+
+```ts
+import { createEventDispatcher } from 'svelte';
+
+const dispatch = createEventDispatcher()
+$0
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sv</b>head -  Head Tag</summary>
 
 ```ts
 <svelte:head>
@@ -156,7 +311,7 @@ $0
     
 
 <details>
-<summary markdown="span">svfe - Svelte for each</summary>
+<summary markdown="span"><b>sv</b>fe -  For Each</summary>
 
 ```ts
 {#each $1 as $2 ($3)}
@@ -168,7 +323,7 @@ $0
     
 
 <details>
-<summary markdown="span">svfee - Svelte for each</summary>
+<summary markdown="span"><b>sv</b>fee -  For Each else</summary>
 
 ```ts
 {#each $1 as $2 ($3)}
@@ -182,11 +337,11 @@ $0
     
 
 <details>
-<summary markdown="span">svif - Svelte if</summary>
+<summary markdown="span"><b>sv</b>if -  If</summary>
 
 ```ts
 {#if $1}
-   $0
+   $2
 {/if}
 $0
 ```
@@ -194,7 +349,7 @@ $0
     
 
 <details>
-<summary markdown="span">svife - Svelte if else</summary>
+<summary markdown="span"><b>sv</b>ife -  If Else</summary>
 
 ```ts
 {#if $1}
@@ -208,13 +363,27 @@ $0
     
 
 <details>
-<summary markdown="span">svawait - Svelte await</summary>
+<summary markdown="span"><b>sv</b>ifei -  If Else If</summary>
+
+```ts
+{#if $1}
+   $2
+{:else if $3}
+   $4
+{/if}
+$0
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sv</b>await -  Await</summary>
 
 ```ts
 {#await $1}
-   {$2}
+   $2
 {:then $3}
-   {$4}
+   $4
 {/await}
 $0
 ```
@@ -222,7 +391,7 @@ $0
     
 
 <details>
-<summary markdown="span">svkey - Svelte key</summary>
+<summary markdown="span"><b>sv</b>key -  Key</summary>
 
 ```ts
 {#key $1}
@@ -237,8 +406,6 @@ $0
 ## Note
 
 The snippets include "$1", "$2"... which are placeholders for the cursor position. You can use the tab key to jump between them.
-
-These snippets do not include required imports. You will need to add them yourself.
 
 ## License
 

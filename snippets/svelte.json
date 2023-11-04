@@ -1,30 +1,35 @@
 {
-  "Svelte Typescript Script Tag": {
-    "prefix": "svts",
-    "body": ["<script lang=\"ts\">", "$0", "</script>"],
-    "description": "Svelte Typescript script tag"
-  },
-  "Svelte Event Dispatcher": {
+  "Svelte: Event Dispatcher (TypeScript)": {
     "prefix": "svdisp",
-    "body": ["const dispatch = createEventDispatcher()", "$0"],
-    "description": "Svelte event dispatcher"
+    "body": [
+      "import { createEventDispatcher } from 'svelte';",
+      "",
+      "const dispatch = createEventDispatcher<{ $1: $2}>()",
+      "$0"
+    ],
+    "description": "Svelte Event Dispatcher"
   },
-  "Svelte Event Dispatcher with types": {
-    "prefix": "svdispt",
-    "body": ["const dispatch = createEventDispatcher<{ $1: $2}>()", "$0"],
-    "description": "Svelte event dispatcher with type annotations"
+  "Svelte: Event Dispatcher (JavaScript)": {
+    "prefix": "svdispjs",
+    "body": [
+      "import { createEventDispatcher } from 'svelte';",
+      "",
+      "const dispatch = createEventDispatcher()",
+      "$0"
+    ],
+    "description": "Svelte Event Dispatcher (JavaScript)"
   },
-  "Svelte Head Tag": {
+  "Svelte: Head Tag": {
     "prefix": "svhead",
     "body": ["<svelte:head>", "   $1", "</svelte:head>", "$0"],
-    "description": "Svelte head tag"
+    "description": "Svelte Head Tag"
   },
-  "Svelte For Each": {
+  "Svelte: For Each": {
     "prefix": "svfe",
     "body": ["{#each $1 as $2 ($3)}", "   $0", "{/each}", "$0"],
-    "description": "Svelte for each"
+    "description": "Svelte For Each"
   },
-  "Svelte For Each else": {
+  "Svelte: For Each else": {
     "prefix": "svfee",
     "body": [
       "{#each $1 as $2 ($3)}",
@@ -34,33 +39,31 @@
       "{/each}",
       "$0"
     ],
-    "description": "Svelte for each"
+    "description": "Svelte For Each else"
   },
-  "Svelte If": {
+  "Svelte: If": {
     "prefix": "svif",
-    "body": ["{#if $1}", "   $0", "{/if}", "$0"],
-    "description": "Svelte if"
+    "body": ["{#if $1}", "   $2", "{/if}", "$0"],
+    "description": "Svelte If"
   },
-  "Svelte If Else": {
+  "Svelte: If Else": {
     "prefix": "svife",
     "body": ["{#if $1}", "   $2", "{:else}", "   $3", "{/if}", "$0"],
-    "description": "Svelte if else"
+    "description": "Svelte If Else"
   },
-  "Svelte Await": {
+  "Svelte: If Else If": {
+    "prefix": "svifei",
+    "body": ["{#if $1}", "   $2", "{:else if $3}", "   $4", "{/if}", "$0"],
+    "description": "Svelte If Else If"
+  },
+  "Svelte: Await": {
     "prefix": "svawait",
-    "body": [
-      "{#await $1}",
-      "   {$2}",
-      "{:then $3}",
-      "   {$4}",
-      "{/await}",
-      "$0"
-    ],
-    "description": "Svelte await"
+    "body": ["{#await $1}", "   $2", "{:then $3}", "   $4", "{/await}", "$0"],
+    "description": "Svelte Await"
   },
-  "Svelte Key": {
+  "Svelte: Key": {
     "prefix": "svkey",
     "body": ["{#key $1}", "   $2", "{/key}", "$0"],
-    "description": "Svelte key"
+    "description": "Svelte Key"
   }
 }
