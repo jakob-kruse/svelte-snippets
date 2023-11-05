@@ -275,6 +275,32 @@ export const handle = async ({ error, event }) => {
 ### SVELTE
 
 <details>
+<summary markdown="span"><b>sv</b>comp -  Component (TypeScript)</summary>
+
+```ts
+<script lang="ts">
+   $1
+</script>
+
+$0
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sv</b>compjs -  Component (JavaScript)</summary>
+
+```ts
+<script>
+   $1
+</script>
+
+$0
+```
+</details>
+    
+
+<details>
 <summary markdown="span"><b>sv</b>disp -  Event Dispatcher</summary>
 
 ```ts

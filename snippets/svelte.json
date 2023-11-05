@@ -1,4 +1,14 @@
 {
+  "Svelte: Component (TypeScript)": {
+    "prefix": "svcomp",
+    "body": ["<script lang=\"ts\">", "   $1", "</script>", "", "$0"],
+    "description": "Svelte Component (TypeScript)"
+  },
+  "Svelte: Component (JavaScript)": {
+    "prefix": "svcompjs",
+    "body": ["<script>", "   $1", "</script>", "", "$0"],
+    "description": "Svelte Component (JavaScript)"
+  },
   "Svelte: Event Dispatcher (TypeScript)": {
     "prefix": "svdisp",
     "body": [
