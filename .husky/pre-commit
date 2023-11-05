@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run "pnpm run build"
+# This script prevents git commit unless the build is successful and no files are modified
+pnpm run build
+
+# Check the exit status of the build command
+build_exit_status=$?
+if [ $build_exit_status -ne 0 ]; then
+  echo "Build failed. Fix the build errors before committing."
+  exit 1
+fi
+
+# Check for uncommitted changes
+if ! git diff --quiet; then
+  echo "Build modified files. Commit or stash your changes before committing."
+  exit 1
+fi

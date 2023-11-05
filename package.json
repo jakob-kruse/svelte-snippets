@@ -44,10 +44,12 @@
     ]
   },
   "scripts": {
-    "build": "tsx scripts/generate-readme.ts"
+    "build": "tsx scripts/generate-readme.ts",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
+    "husky": "^8.0.3",
     "tsx": "^3.12.6"
   }
 }
