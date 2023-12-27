@@ -16,7 +16,7 @@ Snippets for Svelte and Svelte-Kit (using TypeScript)
 <script lang="ts">
    import type { PageData } from './\$types';
 
-   export let page: PageData;
+   export let data: PageData;
    $1
 </script>
 
@@ -31,7 +31,7 @@ $0
 ```ts
 <script>
    /** @type {import('./\$types').PageData} */
-   export let page;
+   export let data;
    $1
 </script>
 
