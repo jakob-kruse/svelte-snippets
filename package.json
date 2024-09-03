@@ -44,9 +44,9 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
+    "@types/node": "^18.19.48",
     "husky": "^8.0.3",
-    "tsx": "^3.12.6",
-    "typescript": "*"
+    "tsx": "^3.14.0",
+    "typescript": "^5.5.4"
   }
 }
