@@ -137,7 +137,7 @@
   "SvelteKit: Page Actions (TypeScript)": {
     "prefix": "ska",
     "body": [
-      "import { Actions } from './\\$types';",
+      "import type { Actions } from './\\$types';",
       "",
       "export const actions: Actions = {",
       "   async ${1:default}({ $2 }) {",
@@ -162,11 +162,11 @@
   "SvelteKit: Hooks: Handle (TypeScript)": {
     "prefix": "skhh",
     "body": [
-      "import type { Handle } from './\\$types';",
+      "import type { Handle } from '@sveltejs/kit';",
       "",
-      "export const handle: Handle = async ({ request, resolve }) => {",
+      "export const handle: Handle = async ({ event, resolve }) => {",
       "   $1",
-      "   return resolve(request);",
+      "   return resolve(event);",
       "};"
     ],
     "description": "SvelteKit Hooks: Handle (TypeScript)"
@@ -174,18 +174,18 @@
   "SvelteKit: Hooks: Handle (JavaScript)": {
     "prefix": "skhhjs",
     "body": [
-      "/** @type {import('./\\$types').Handle} */",
+      "/** @type {import('@sveltejs/kit').Handle} */",
       "export const handle = async ({ event, resolve }) => {",
       "   $1",
       "   return resolve(event);",
       "};"
     ],
-    "description": "SvelteKit Hooks: Handle (JavaScript)"
+    "description": "SvelteKit Hooks: HandleFetch (JavaScript)"
   },
   "SvelteKit: Hooks: HandleFetch (TypeScript)": {
     "prefix": "skhf",
     "body": [
-      "import type { HandleFetch } from './\\$types';",
+      "import type { HandleFetch } from '@sveltejs/kit';",
       "",
       "export const handle: HandleFetch = async ({ request, fetch }) => {",
       "   $1",
@@ -197,7 +197,7 @@
   "SvelteKit: Hooks: HandleFetch (JavaScript)": {
     "prefix": "skhfjs",
     "body": [
-      "/** @type {import('./\\$types').HandleFetch} */",
+      "/** @type {import('@sveltejs/kit').HandleFetch} */",
       "export const handle = async ({ request, fetch }) => {",
       "   $1",
       "};"
@@ -207,7 +207,7 @@
   "SvelteKit: Hooks: Handle Error (TypeScript)": {
     "prefix": "skhe",
     "body": [
-      "import type { HandleError } from './\\$types';",
+      "import type { HandleError } from '@sveltejs/kit';",
       "",
       "export const handle: HandleError = async ({ error, event }) => {",
       "   $2",
@@ -218,11 +218,22 @@
   "SvelteKit: Hooks: Handle Error (JavaScript)": {
     "prefix": "skhejs",
     "body": [
-      "/** @type {import('./\\$types').HandleError} */",
+      "/** @type {import('@sveltejs/kit').HandleError} */",
       "export const handle = async ({ error, event }) => {",
       "   $1",
       "};"
     ],
     "description": "SvelteKit Hooks: Handle Error (JavaScript)"
+  },
+  "SvelteKit: Request Handler (TypeScript)": {
+    "prefix": "skreq",
+    "body": [
+      "import type { RequestHandler } from './\\$types';",
+      "",
+      "export const GET = (async ({ $1 }) => {",
+      "   $2",
+      "   return new Response('Ok', { status: 200 });",
+      "}) satisfies RequestHandler;"
+    ]
   }
 }

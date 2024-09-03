@@ -1,0 +1,32 @@
+{
+  "Svelte 5: Props (JavaScript)": {
+    "prefix": "sv5prjs",
+    "body": ["let { $2 } = \\$props()"],
+    "description": "Svelte 5: Props (JavaScript)"
+  },
+  "Svelte 5: Props (TypeScript)": {
+    "prefix": "sv5pr",
+    "body": ["type Props = {", "   $1", "};", "let { $2 }: Props = \\$props()"],
+    "description": "Svelte 5: Props (TypeScript)"
+  },
+  "Svelte: Event Dispatcher (TypeScript)": {
+    "prefix": "svdisp",
+    "body": [
+      "import { createEventDispatcher } from 'svelte';",
+      "",
+      "const dispatch = createEventDispatcher<{ $1: $2}>()",
+      "$0"
+    ],
+    "description": "Svelte Event Dispatcher"
+  },
+  "Svelte: Event Dispatcher (JavaScript)": {
+    "prefix": "svdispjs",
+    "body": [
+      "import { createEventDispatcher } from 'svelte';",
+      "",
+      "const dispatch = createEventDispatcher()",
+      "$0"
+    ],
+    "description": "Svelte Event Dispatcher (JavaScript)"
+  }
+}

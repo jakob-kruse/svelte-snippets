@@ -9,26 +9,6 @@
     "body": ["<script>", "   $1", "</script>", "", "$0"],
     "description": "Svelte Component (JavaScript)"
   },
-  "Svelte: Event Dispatcher (TypeScript)": {
-    "prefix": "svdisp",
-    "body": [
-      "import { createEventDispatcher } from 'svelte';",
-      "",
-      "const dispatch = createEventDispatcher<{ $1: $2}>()",
-      "$0"
-    ],
-    "description": "Svelte Event Dispatcher"
-  },
-  "Svelte: Event Dispatcher (JavaScript)": {
-    "prefix": "svdispjs",
-    "body": [
-      "import { createEventDispatcher } from 'svelte';",
-      "",
-      "const dispatch = createEventDispatcher()",
-      "$0"
-    ],
-    "description": "Svelte Event Dispatcher (JavaScript)"
-  },
   "Svelte: Head Tag": {
     "prefix": "svhead",
     "body": ["<svelte:head>", "   $1", "</svelte:head>", "$0"],

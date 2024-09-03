@@ -168,7 +168,7 @@ export const load = async (${1:event}) => {
 <summary markdown="span"><b>sk</b>a -  Page Actions (TypeScript)</summary>
 
 ```ts
-import { Actions } from './\$types';
+import type { Actions } from './\$types';
 
 export const actions: Actions = {
    async ${1:default}({ $2 }) {
@@ -197,21 +197,21 @@ export const actions = {
 <summary markdown="span"><b>sk</b>hh -  Hooks: Handle (TypeScript)</summary>
 
 ```ts
-import type { Handle } from './\$types';
+import type { Handle } from '@sveltejs/kit';
 
-export const handle: Handle = async ({ request, resolve }) => {
+export const handle: Handle = async ({ event, resolve }) => {
    $1
-   return resolve(request);
+   return resolve(event);
 };
 ```
 </details>
     
 
 <details>
-<summary markdown="span"><b>sk</b>hhjs -  Hooks: Handle (JavaScript)</summary>
+<summary markdown="span"><b>sk</b>hhjs -  Hooks: HandleFetch (JavaScript)</summary>
 
 ```ts
-/** @type {import('./\$types').Handle} */
+/** @type {import('@sveltejs/kit').Handle} */
 export const handle = async ({ event, resolve }) => {
    $1
    return resolve(event);
@@ -224,7 +224,7 @@ export const handle = async ({ event, resolve }) => {
 <summary markdown="span"><b>sk</b>hf -  Hooks: HandleFetch (Typescript)</summary>
 
 ```ts
-import type { HandleFetch } from './\$types';
+import type { HandleFetch } from '@sveltejs/kit';
 
 export const handle: HandleFetch = async ({ request, fetch }) => {
    $1
@@ -238,7 +238,7 @@ export const handle: HandleFetch = async ({ request, fetch }) => {
 <summary markdown="span"><b>sk</b>hfjs -  Hooks: HandleFetch (JavaScript)</summary>
 
 ```ts
-/** @type {import('./\$types').HandleFetch} */
+/** @type {import('@sveltejs/kit').HandleFetch} */
 export const handle = async ({ request, fetch }) => {
    $1
 };
@@ -250,7 +250,7 @@ export const handle = async ({ request, fetch }) => {
 <summary markdown="span"><b>sk</b>he -  Hooks: Handle Error (TypeScript)</summary>
 
 ```ts
-import type { HandleError } from './\$types';
+import type { HandleError } from '@sveltejs/kit';
 
 export const handle: HandleError = async ({ error, event }) => {
    $2
@@ -263,39 +263,48 @@ export const handle: HandleError = async ({ error, event }) => {
 <summary markdown="span"><b>sk</b>hejs -  Hooks: Handle Error (JavaScript)</summary>
 
 ```ts
-/** @type {import('./\$types').HandleError} */
+/** @type {import('@sveltejs/kit').HandleError} */
 export const handle = async ({ error, event }) => {
    $1
 };
 ```
 </details>
     
-    
-
-### SVELTE
 
 <details>
-<summary markdown="span"><b>sv</b>comp -  Component (TypeScript)</summary>
+<summary markdown="span"><b>sk</b>req - No description</summary>
 
 ```ts
-<script lang="ts">
-   $1
-</script>
+import type { RequestHandler } from './\$types';
 
-$0
+export const GET = (async ({ $1 }) => {
+   $2
+   return new Response('Ok', { status: 200 });
+}) satisfies RequestHandler;
+```
+</details>
+    
+    
+
+### SVELTE SCRIPT TAG
+
+<details>
+<summary markdown="span"><b>sv</b>5prjs - : Props (JavaScript)</summary>
+
+```ts
+let { $2 } = \$props()
 ```
 </details>
     
 
 <details>
-<summary markdown="span"><b>sv</b>compjs -  Component (JavaScript)</summary>
+<summary markdown="span"><b>sv</b>5pr - : Props (TypeScript)</summary>
 
 ```ts
-<script>
+type Props = {
    $1
-</script>
-
-$0
+};
+let { $2 }: Props = \$props()
 ```
 </details>
     
@@ -319,6 +328,35 @@ $0
 import { createEventDispatcher } from 'svelte';
 
 const dispatch = createEventDispatcher()
+$0
+```
+</details>
+    
+    
+
+### SVELTE TEMPLATE
+
+<details>
+<summary markdown="span"><b>sv</b>comp -  Component (TypeScript)</summary>
+
+```ts
+<script lang="ts">
+   $1
+</script>
+
+$0
+```
+</details>
+    
+
+<details>
+<summary markdown="span"><b>sv</b>compjs -  Component (JavaScript)</summary>
+
+```ts
+<script>
+   $1
+</script>
+
 $0
 ```
 </details>
